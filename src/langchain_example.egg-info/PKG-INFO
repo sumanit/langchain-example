@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: langchain_example
+Version: 0.1
+Requires-Dist: langchain
+Requires-Dist: langchain_ollama
+Dynamic: requires-dist
