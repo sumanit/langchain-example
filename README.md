@@ -13,9 +13,5 @@ pip install --upgrade pip
 ```
 4. 安装langchain
 ```
-pip install langchain
-```
-5. 安装 langchain_ollama
-```
-pip install langchain_ollama
+pip install langchain langchain_ollama langchain-community
 ```

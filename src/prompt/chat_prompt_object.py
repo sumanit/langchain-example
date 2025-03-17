@@ -1,20 +1,6 @@
-"""
-# 创建lagnchain的项目环境
-python3 -m venv langchain
-# 激活环境
-source langchain/bin/activate
-# 更新pip
-pip install --upgrade pip
-# 安装langchain
-pip install langchain
-# 安装 langchain_ollama
-pip install langchain_ollama
-"""
-
 from langchain_ollama import OllamaLLM
-from src.common.ollama_helper import get_optimal_deepseek
-from langchain.prompts import PromptTemplate
-from langchain.prompts import ChatPromptTemplate
+from common.ollama_helper import get_optimal_deepseek
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage,HumanMessage
 
 if __name__ == "__main__":
@@ -26,10 +12,10 @@ if __name__ == "__main__":
     # 定义提示词模板
     prompt = ChatPromptTemplate.from_messages([
         SystemMessage(
-            content="You are a helpful assistant! Your name is Bob."
+            content="你是一个全能助手!你的名字是鲍勃."
         ),
         HumanMessage(
-            content="{user_input} What is your name?"
+            content="{user_input} 你的名字是什么?"
         )
     ])
     user_input = {"user_input": "你好"}
