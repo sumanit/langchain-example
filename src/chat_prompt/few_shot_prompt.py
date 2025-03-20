@@ -16,12 +16,14 @@ examples = [
     },
     {
         "自然语言": "统计智能手表品类中差评率超过10%的商品",
-        "SQL": """SELECT product_id,
+        "SQL": """\
+            SELECT product_id,
                 SUM(CASE WHEN rating < 3 THEN 1 ELSE 0 END)*1.0/COUNT(*) AS bad_rate 
                 FROM products 
                 WHERE category='智能手表' 
                 GROUP BY product_id 
-                HAVING bad_rate > 0.1;"""
+                HAVING bad_rate > 0.1;\
+        """
     }
 ]
 
@@ -41,13 +43,13 @@ def build_sql_prompt():
             input_variables=["自然语言", "SQL"],
             template=example_template
         ),
-        suffix="自然语言查询：{input}\n生成SQL：\n```sql\n",
+        suffix="自然语言查询：{input}\n生成SQL：\n```sql```\n",
         input_variables=["input"],
-        prefix="""
+        prefix="""\
             你是一个SQL专家，根据示例将自然语言转换为标准SQL：
             数据库结构：
             - sales(client_id, client_name, region, year, total_sales)
-            - products(product_id, category, rating, review_count)
+            - products(product_id, category, rating, review_count)\
             """
     )
     return HumanMessagePromptTemplate(prompt=few_shot_template)  # 关键修复点
