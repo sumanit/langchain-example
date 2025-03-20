@@ -61,4 +61,15 @@ BasePromptTemplate
  +-- ImagePromptTemplate
 ```
 
+# Selector
+
+```
+BaseExampleSelector
+ +-- LengthBasedExampleSelector
+ +-- MaxMarginalRelevanceExampleSelector
+ +-- _VectorStoreExampleSelector
+    +-- MaxMarginalRelevanceExampleSelector
+    +-- SemanticSimilarityExampleSelector
+ +-- NGramOverlapExampleSelector
+```
 
