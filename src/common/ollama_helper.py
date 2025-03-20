@@ -6,7 +6,7 @@ def get_installed_ollama_models():
     """获取本地已安装的Ollama模型列表"""
     try:
         result = subprocess.run(
-            ['ollama', 'list'],
+            ['/usr/local/bin/ollama', 'list'],
             capture_output=True,
             text=True,
             check=True
