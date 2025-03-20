@@ -15,3 +15,29 @@ pip install --upgrade pip
 ```
 pip install langchain langchain_ollama langchain-community
 ```
+# Prompt类继承关系
+```
+BasePromptTemplate
+ +-- BaseChatPromptTemplate
+      +-- ChatPromptTemplate
+      |    +-- StructuredPrompt
+      |    +-- AgentScratchPadChatPromptTemplate  
+      +-- FewShotChatMessagePromptTemplate
+ +-- StringPromptTemplate
+      +-- PromptTemplate 
+      +-- FewShotPromptTemplate
+      +-- FewShotPromptWithTemplates
+ +-- PipelinePromptTemplate
+ +-- ImagePromptTemplate
+```
+
+```
+BaseMessagePromptTemplate
+ +-- _StringImageMessagePromptTemplate
+      +-- AIMessagePromptTemplate
+      +-- HumanMessagePromptTemplate
+      +-- SystemMessagePromptTemplate
+ +-- BaseStringMessagePromptTemplate
+      +-- ChatMessagePromptTemplate
+ +-- MessagesPlaceholder    
+```
