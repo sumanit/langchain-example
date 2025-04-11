@@ -11,6 +11,7 @@ if __name__ == "__main__":
 
     # 定义子消息模板
     system_msg = SystemMessagePromptTemplate.from_template("你是一个{role}。")
+    system_msg.format()
     user_msg = HumanMessagePromptTemplate.from_template("请做一个关于{theme}的五言绝句诗。")
     ai_msg = AIMessagePromptTemplate.from_template("春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。")
     user_msg2 = ChatMessagePromptTemplate.from_template(
