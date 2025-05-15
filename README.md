@@ -15,8 +15,8 @@ pip install --upgrade pip
 ```
 pip install langchain langchain_core langchain_ollama langchain-community
 ```
-# Prompt类继承关系
-模型需要的是消息列表。因此，可以通过 `MessagePromptTemplate` 生成单个结构化消息（`Message` 对象），再通过 `ChatPromptTemplate` 将这些消息组织成对话列表。
+# Message类继承关系
+模型需要的是消息列表。因此，可以通过 `MessagePromptTemplate` 生成单个结构化消息（`Message` 对象），再通过 `PromptTemplate` 将这些消息组织成对话列表。
 - Message 不支持占位符
 ```
 BaseMessage

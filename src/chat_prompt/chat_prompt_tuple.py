@@ -1,7 +1,6 @@
 from langchain_ollama import OllamaLLM
 from common.ollama_helper import get_optimal_deepseek
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.messages import SystemMessage, HumanMessage
 
 if __name__ == "__main__":
     model_name = get_optimal_deepseek()
