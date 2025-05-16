@@ -15,7 +15,8 @@ stream = True
 # 调用模型生成内容 一次返回
 if(stream): 
     ## 流式返回
-    for chunk in ollama_llm.stream(formatted_prompt):
+    for chunk in ollama_llm.stream(formatted_prompt, raw=True):
+        print(type(chunk))
         print(chunk)
 else:
     response = ollama_llm.invoke(formatted_prompt)
