@@ -26,7 +26,7 @@ BaseMessage 基类
  +-- HumanMessage 用户消息
  +-- AIMessage 模型回复消息
  +-- ChatMessage 通用消息
- +-- FunctionMessage  
+ +-- FunctionMessage   
  +-- ToolMessage
  +-- BaseMessageChunk
       +-- SystemMessageChunk
@@ -40,12 +40,12 @@ MessagePromptTemplate 用于通过模板生成各种类型的Message
 ```
 BaseMessagePromptTemplate 基类
  +-- _StringImageMessagePromptTemplate 
-      +-- AIMessagePromptTemplate
-      +-- HumanMessagePromptTemplate
-      +-- SystemMessagePromptTemplate
+      +-- AIMessagePromptTemplate      生成 AIMessage
+      +-- HumanMessagePromptTemplate   生成 HumanMessage
+      +-- SystemMessagePromptTemplate  生成 SystemMessage
  +-- BaseStringMessagePromptTemplate
-      +-- ChatMessagePromptTemplate
- +-- MessagesPlaceholder    
+      +-- ChatMessagePromptTemplate    生成 ChatMessage
+ +-- MessagesPlaceholder               消息占位符 注意 是s复数 所以返回的是BaseMessage 列表
 ```
 
 PromptTemplate 用于通过模板生成调用模型的Message列表 

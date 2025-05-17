@@ -11,13 +11,16 @@ if __name__ == "__main__":
 
     # 定义子消息模板
     system_msg = SystemMessagePromptTemplate.from_template("你是一个{role}。")
-    system_msg.format()
+    system_msg.format(role="dd")
     user_msg = HumanMessagePromptTemplate.from_template("请做一个关于{theme}的五言绝句诗。")
+    print(type(user_msg.format(theme="dd")))
     ai_msg = AIMessagePromptTemplate.from_template("春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。")
     user_msg2 = ChatMessagePromptTemplate.from_template(
         role="user",
         template="还不够 再来一首"  # 使用 theme 变量
     )
+
+    print(type(user_msg2.format()))
 
     # 组合成完整对话模板
     prompt = ChatPromptTemplate.from_messages([system_msg, user_msg, ai_msg, user_msg2])
