@@ -36,7 +36,7 @@ examples = [
 ]
 
 
-def build_sql_prompt():
+def build_human_prompt():
     example_template = """用户输入：{input}
                           用户意图：{intent}"""
     # 初始化模型实例
@@ -63,7 +63,7 @@ def build_sql_prompt():
             你是一个健康咨询专家，根据示例将判断用户意图：\
             """
     )
-    return HumanMessagePromptTemplate(prompt=few_shot_template)  # 关键修复点
+    return HumanMessagePromptTemplate(prompt=few_shot_template)
 
 
 if __name__ == "__main__":
@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     # 构建提示流程
     system_msg = SystemMessagePromptTemplate.from_template("你是一个专业的健康咨询师")
-    sql_human_msg = build_sql_prompt()
+    sql_human_msg = build_human_prompt()
 
     full_prompt = ChatPromptTemplate.from_messages([
         system_msg,
