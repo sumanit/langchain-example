@@ -22,7 +22,7 @@ prompt = ChatPromptTemplate.from_messages(
         ("human", "{question}"),
     ]
 )
-parser = JsonOutputParser()
+parser = StrOutputParser()
 chain = prompt | ollama_llm | parser;# 历史记录处理器
 def get_message_history(session_id: str) -> FileChatMessageHistory:
     print(session_id)
