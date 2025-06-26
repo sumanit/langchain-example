@@ -9,7 +9,7 @@ def send_messages(messages):
     return response.choices[0].message
 
 client = OpenAI(
-    api_key="sk-68555db9979b40f8a34c56fb5069ad6d",
+    api_key="sk-",
     base_url="https://api.deepseek.com",
 )
 
