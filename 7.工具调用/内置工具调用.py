@@ -7,7 +7,7 @@ from langchain_community.tools.wikipedia.tool import (
 
 # 初始化文件搜索工具（必须设置安全目录）
 file_tool = FileSearchTool(root_dir="/Users/suman6/Desktop")  # 替换为实际搜索目录
-wikipedia_api_wrapper = WikipediaAPIWrapper()
+wikipedia_api_wrapper = WikipediaAPIWrapper(lang="zh")
 wikipedia_query_run = WikipediaQueryRun(api_wrapper=wikipedia_api_wrapper)
 tools = [file_tool,wikipedia_query_run]
 tool_dic = {item.name: item for item in tools}
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     ollama_llm_with_tools = ollama_llm.bind_tools(tools)
 
     # 使用正确的消息格式
-    messages = [HumanMessage(content="what is card")]
+    messages = [HumanMessage(content="什么是python")]
 
     # 调用模型
     response = ollama_llm_with_tools.invoke(messages)
